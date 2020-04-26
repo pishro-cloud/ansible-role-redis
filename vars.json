@@ -20,7 +20,7 @@
 {
 	"name": "redis_maxmemory",
 	"type": "number",
-	"input": {"type": "text", "default": 0},
+	"input": {"type": "number", "default": 0},
 	"metric": "bytes",
 	"comment": "Limit memory usage to the specified amount of bytes. Leave at 0 for unlimited."
 },
