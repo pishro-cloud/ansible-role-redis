@@ -1,0 +1,50 @@
+[{
+	"name": "redis_port",
+	"type": "number",
+	"input": {"type": "text", "default": 6379},
+	"comment": "Port on which Redis will listen."
+},
+{
+	"name": "redis_bind_interface",
+	"type": "ip_address",
+	"input": {"type": "text", "default": "127.0.0.1"},
+	"comment": "Interface on which Redis will listen. Set the interface to 0.0.0.0 to listen on all interfaces."
+},
+{
+	"name": "redis_timeout",
+	"type": "number",
+	"input": {"type": "text", "default": 300},
+	"metric": "seconds",
+	"comment": "Close a connection after a client is idle N seconds. Set to 0 to disable timeout."
+},
+{
+	"name": "redis_maxmemory",
+	"type": "number",
+	"input": {"type": "text", "default": 0},
+	"metric": "bytes",
+	"comment": "Limit memory usage to the specified amount of bytes. Leave at 0 for unlimited."
+},
+{
+	"name": "redis_appendonly",
+	"type": "string",
+	"input": {"type": "list", "items": ["yes", "no"], "default": "no"},
+	"comment": "The appendonly option, if enabled, affords better data durability guarantees, at the cost of slightly slower performance."
+},
+{
+	"name": "redis_appendfsync",
+	"type": "string",
+	"input": {"type": "list", "items": ["everysec", "always", "no"], "default": "everysec"},
+	"comment": "Valid values are always (slower, safest), everysec (happy medium), or no (let the filesystem flush data when it wants, most risky)."
+},
+{
+	"name": "redis_requirepass",
+	"type": "string",
+	"input": {"type": "text", "default": "mysupersecretpass"},
+	"comment": "Set a password to require authentication to Redis."
+},
+{
+	"name": "redis_disabled_commands",
+	"type": "string",
+	"input": {"type": "multiple_input", "default": ""},
+	"comment": "For extra security, you can disable certain Redis commands (this is especially important if Redis is publicly accessible)."
+}]
